@@ -7,12 +7,12 @@ class GalleryCarousel {
         this.photos = [
             'photos/pro02.jpg', 'photos/candid03.jpg', 'photos/pro07.jpg',
             'photos/candid04.jpg', 'photos/pro08.jpg', 'photos/candid05.jpg',
-            'photos/pro09.jpg', 'photos/candid06.jpg', 'photos/pro11.jpg',
-            'photos/candid07.jpg', 'photos/pro12.jpg', 'photos/candid08.jpg',
-            'photos/pro13.jpg', 'photos/candid09.jpg', 'photos/pro14.jpg',
-            'photos/pro15.jpg', 'photos/pro03.jpg', 'photos/pro04.jpg',
-            'photos/pro01.jpg', 'photos/pro05.jpg', 'photos/pro06.jpg',
-            'photos/candid01.jpg', 'photos/candid02.jpg', 'photos/pro10.jpg'
+            'photos/pro09.jpg', 'photos/pro11.jpg', 'photos/pro12.jpg',
+            'photos/candid08.jpg', 'photos/pro13.jpg', 'photos/candid09.jpg',
+            'photos/pro14.jpg', 'photos/pro15.jpg', 'photos/pro03.jpg',
+            'photos/pro04.jpg', 'photos/pro01.jpg', 'photos/pro05.jpg',
+            'photos/pro06.jpg', 'photos/candid01.jpg', 'photos/candid02.jpg',
+            'photos/pro10.jpg'
         ];
 
         this.track = document.getElementById('carouselTrack');
