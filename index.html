@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Mariage 💕 Đám Cưới Của Chúng Tôi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio Player (optionnel - ajoutez votre propre musique) -->
+    <div class="audio-controls" style="display: none;">
+        <button id="audioToggle" class="audio-btn" aria-label="Contrôle musique">🎵</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <!-- Ajoutez votre propre fichier audio ici -->
+        <!-- <source src="music/wedding-song.mp3" type="audio/mpeg"> -->
+    </audio>
+
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Golden Particles -->
+    <div class="golden-particles" id="goldenParticles"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content reveal">
+            <h1 class="hero-title">
+                <span class="french">Nous nous sommes mariés</span>
+                <span class="vietnamese">Chúng tôi đã kết hôn</span>
+            </h1>
+            <div class="hero-subtitle">
+                <p class="french">Une histoire d'amour éternelle</p>
+                <p class="vietnamese">Câu chuyện tình yêu vĩnh cửu</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>↓</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="photos/photo1.jpg" alt="Photo de mariage - Couple heureux" class="parallax-img">
+        </div>
+    </section>
+
+    <!-- Timeline Vertical Line -->
+    <div class="timeline-line"></div>
+
+    <!-- Timeline Section 1: La Rencontre -->
+    <section class="timeline-section left" data-number="01">
+        <div class="timeline-badge">01</div>
+        <div class="timeline-content reveal">
+            <div class="timeline-image">
+                <img src="photos/photo2.jpg" alt="Photo de mariage - La Rencontre">
+            </div>
+            <div class="timeline-text">
+                <h2 class="french">La Rencontre</h2>
+                <h2 class="vietnamese">Cuộc Gặp Gỡ</h2>
+                <p class="french">Deux âmes destinées à se rencontrer, deux cœurs qui ont trouvé leur moitié.</p>
+                <p class="vietnamese">Hai tâm hồn định mệnh gặp nhau, hai trái tim tìm thấy nửa kia của mình.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section 2: L'Engagement -->
+    <section class="timeline-section right" data-number="02">
+        <div class="timeline-badge">02</div>
+        <div class="timeline-content reveal">
+            <div class="timeline-text">
+                <h2 class="french">L'Engagement</h2>
+                <h2 class="vietnamese">Lời Hứa</h2>
+                <p class="french">Une promesse solennelle, un contrat d'amour pour la vie.</p>
+                <p class="vietnamese">Một lời hứa long trọng, một hợp đồng tình yêu cho cuộc đời.</p>
+            </div>
+            <div class="timeline-image">
+                <img src="photos/photo3.jpg" alt="Photo de mariage - L'Engagement">
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section 3: La Cérémonie -->
+    <section class="timeline-section left" data-number="03">
+        <div class="timeline-badge">03</div>
+        <div class="timeline-content reveal">
+            <div class="timeline-image">
+                <img src="photos/photo4.jpg" alt="Photo de mariage - La Cérémonie">
+            </div>
+            <div class="timeline-text">
+                <h2 class="french">La Cérémonie</h2>
+                <h2 class="vietnamese">Lễ Cưới</h2>
+                <p class="french">Le plus beau jour de nos vies, entourés de ceux qu'on aime.</p>
+                <p class="vietnamese">Ngày đẹp nhất trong đời chúng tôi, được bao quanh bởi những người thân yêu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section 4: Notre Avenir -->
+    <section class="timeline-section right" data-number="04">
+        <div class="timeline-badge">04</div>
+        <div class="timeline-content reveal">
+            <div class="timeline-text">
+                <h2 class="french">Notre Avenir</h2>
+                <h2 class="vietnamese">Tương Lai Của Chúng Ta</h2>
+                <p class="french">Main dans la main, pour toujours et à jamais.</p>
+                <p class="vietnamese">Tay trong tay, mãi mãi và bên nhau.</p>
+            </div>
+            <div class="timeline-image">
+                <img src="photos/photo5.jpg" alt="Photo de mariage - Notre Avenir">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-header reveal">
+            <h2 class="french">Notre Album</h2>
+            <h2 class="vietnamese">Album Của Chúng Tôi</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal" data-delay="100">
+                <img src="photos/photo6.jpg" alt="Photo de mariage - Galerie 1">
+            </div>
+            <div class="gallery-item reveal" data-delay="200">
+                <img src="photos/photo7.jpg" alt="Photo de mariage - Galerie 2">
+            </div>
+            <div class="gallery-item reveal" data-delay="300">
+                <img src="photos/photo8.jpg" alt="Photo de mariage - Galerie 3">
+            </div>
+            <div class="gallery-item reveal" data-delay="400">
+                <img src="photos/photo9.jpg" alt="Photo de mariage - Galerie 4">
+            </div>
+            <div class="gallery-item reveal" data-delay="500">
+                <img src="photos/photo10.jpg" alt="Photo de mariage - Galerie 5">
+            </div>
+            <div class="gallery-item reveal" data-delay="600">
+                <img src="photos/photo1.jpg" alt="Photo de mariage - Galerie 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Guestbook Section / Livre d'Or -->
+    <section class="guestbook-section" id="guestbook">
+        <div class="guestbook-header reveal">
+            <h2 class="french gradient-text">Livre d'Or</h2>
+            <h2 class="vietnamese gradient-text">Sổ Lưu Bút</h2>
+            <p class="guestbook-subtitle french">Laissez-nous un message d'amour</p>
+            <p class="guestbook-subtitle vietnamese">Để lại lời nhắn yêu thương</p>
+        </div>
+
+        <!-- Guestbook Form -->
+        <div class="guestbook-form-container reveal">
+            <form id="guestbookForm" class="guestbook-form">
+                <div class="form-group">
+                    <label for="guestName">
+                        <span class="french">Votre nom</span>
+                        <span class="vietnamese">Tên của bạn</span>
+                    </label>
+                    <input type="text" id="guestName" required placeholder="Jean Dupont / Nguyễn Văn A">
+                </div>
+
+                <div class="form-group">
+                    <label for="guestMessage">
+                        <span class="french">Votre message</span>
+                        <span class="vietnamese">Lời nhắn của bạn</span>
+                    </label>
+                    <textarea id="guestMessage" rows="4" required placeholder="Félicitations pour votre mariage ! / Chúc mừng hạnh phúc !"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="guestEmoji">
+                        <span class="french">Choisir une icône</span>
+                        <span class="vietnamese">Chọn biểu tượng</span>
+                    </label>
+                    <div class="emoji-selector">
+                        <input type="radio" name="emoji" id="emoji1" value="💕" checked>
+                        <label for="emoji1" class="emoji-option">💕</label>
+
+                        <input type="radio" name="emoji" id="emoji2" value="💗">
+                        <label for="emoji2" class="emoji-option">💗</label>
+
+                        <input type="radio" name="emoji" id="emoji3" value="🎉">
+                        <label for="emoji3" class="emoji-option">🎉</label>
+
+                        <input type="radio" name="emoji" id="emoji4" value="💐">
+                        <label for="emoji4" class="emoji-option">💐</label>
+
+                        <input type="radio" name="emoji" id="emoji5" value="🥂">
+                        <label for="emoji5" class="emoji-option">🥂</label>
+
+                        <input type="radio" name="emoji" id="emoji6" value="💖">
+                        <label for="emoji6" class="emoji-option">💖</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <span class="french">Mode de visibilité</span>
+                        <span class="vietnamese">Chế độ hiển thị</span>
+                    </label>
+                    <div class="visibility-selector">
+                        <input type="radio" name="visibility" id="visPublic" value="public" checked>
+                        <label for="visPublic" class="visibility-option">
+                            <span class="vis-icon">👁️</span>
+                            <span class="vis-label">
+                                <strong>Public</strong>
+                                <small>Visible par tous / Mọi người xem được</small>
+                            </span>
+                        </label>
+
+                        <input type="radio" name="visibility" id="visAnonymous" value="anonymous">
+                        <label for="visAnonymous" class="visibility-option">
+                            <span class="vis-icon">🎭</span>
+                            <span class="vis-label">
+                                <strong>Anonyme</strong>
+                                <small>Nom caché / Ẩn danh</small>
+                            </span>
+                        </label>
+
+                        <input type="radio" name="visibility" id="visPrivate" value="private">
+                        <label for="visPrivate" class="visibility-option">
+                            <span class="vis-icon">🔒</span>
+                            <span class="vis-label">
+                                <strong>Privé</strong>
+                                <small>Seulement pour vous / Chỉ dành cho bạn</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="guestbook-submit">
+                    <span class="french">Signer le livre d'or</span>
+                    <span class="vietnamese">Ký tên</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Filter Toggle -->
+        <div class="guestbook-filter" id="guestbookFilter">
+            <button class="filter-toggle" id="showPrivateToggle">
+                <span class="toggle-icon">🔒</span>
+                <span class="toggle-text french">Afficher les messages privés</span>
+                <span class="toggle-text vietnamese">Hiện tin nhắn riêng tư</span>
+            </button>
+        </div>
+
+        <!-- Messages Display -->
+        <div class="guestbook-messages" id="guestbookMessages">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="guestbook-empty" id="guestbookEmpty">
+            <div class="empty-icon">📖</div>
+            <p class="french">Soyez le premier à signer notre livre d'or !</p>
+            <p class="vietnamese">Hãy là người đầu tiên ký tên vào sổ lưu bút!</p>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section">
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="final-content reveal">
+            <h2 class="french gradient-text">À jamais unis</h2>
+            <h2 class="vietnamese gradient-text">Mãi mãi bên nhau</h2>
+            <div class="hearts-animation">
+                💕💗💖💝
+            </div>
+            <p class="date">2024</p>
+            <div class="final-cta">
+                <button class="share-btn" id="shareBtn">
+                    <span>Partager notre bonheur</span>
+                    <span class="vietnamese-cta">Chia sẻ hạnh phúc</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

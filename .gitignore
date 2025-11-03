@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+*.log
+.env
+test-*.png
+improved-*.png
+screenshot-*.png
+analyze.js
+capture_*.js
+package-lock.json
