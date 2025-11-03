@@ -1809,18 +1809,29 @@ footer small {
     }
 
     .banner-content {
-        flex-direction: column !important;
-        gap: 12px !important;
-        text-align: center !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .banner-icon {
+        font-size: 1.5rem !important;
+        flex-shrink: 0 !important;
     }
 
     .banner-text {
-        font-size: 0.95rem !important;
+        flex: 1 !important;
+        text-align: left !important;
+        font-size: 0.85rem !important;
     }
 
     .banner-btn {
-        width: 100% !important;
-        padding: 14px 24px !important;
+        flex-shrink: 0 !important;
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
     }
 
     /* Hero optimisé mobile */
@@ -1849,6 +1860,11 @@ footer small {
         margin-bottom: 20px !important;
     }
 
+    /* Cacher la ligne timeline sur mobile */
+    .timeline-line {
+        display: none !important;
+    }
+
     /* Timeline sections plus compactes */
     .timeline-section {
         padding: 40px 20px !important;
@@ -1873,11 +1889,23 @@ footer small {
         margin: 0 auto !important;
     }
 
+    /* Cacher les badges timeline sur mobile pour éviter chevauchement */
     .timeline-badge {
-        width: 60px !important;
-        height: 60px !important;
-        font-size: 1.5rem !important;
+        display: none !important;
     }
+
+    /* Alternative: petits badges en haut au centre */
+    /* Décommenter pour afficher petits badges:
+    .timeline-badge {
+        position: static !important;
+        transform: none !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1rem !important;
+        margin: 0 auto 20px !important;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+    }
+    */
 
     /* Gallery optimisée mobile */
     .gallery-grid {
@@ -1912,6 +1940,9 @@ footer small {
         width: 48px !important;
         height: 48px !important;
         font-size: 2rem !important;
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
     }
 
     .carousel-prev {
@@ -1920,6 +1951,11 @@ footer small {
 
     .carousel-next {
         right: 10px !important;
+    }
+
+    /* Garder la position fixe même au hover */
+    .carousel-btn:hover {
+        transform: translateY(-50%) scale(1.05) !important;
     }
 
     .carousel-indicators {
