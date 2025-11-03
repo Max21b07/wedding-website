@@ -35,10 +35,16 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://max21b07.github.io/wedding-website/">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
+
+    <!-- Optimized Google Fonts loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    </noscript>
 </head>
 <body>
     <!-- Audio Player (optionnel - ajoutez votre propre musique) -->
@@ -609,8 +615,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     <script src="firebase-config.js"></script>
 
-    <script src="script.js"></script>
-    <script src="carousel.js"></script>
-    <script src="guestbook-firebase.js"></script>
+    <script src="script.min.js"></script>
+    <script src="carousel.min.js"></script>
+    <script src="guestbook-firebase.min.js"></script>
 </body>
 </html>
