@@ -75,7 +75,9 @@ class FirebaseGuestbook {
     }
 
     listenForMessages() {
+        // Only show approved messages (or all if showPrivate is true for admin)
         this.db.collection('guestbook')
+            .where('approved', '==', true)
             .orderBy('timestamp', 'desc')
             .onSnapshot((snapshot) => {
                 this.displayMessages(snapshot);
@@ -87,6 +89,21 @@ class FirebaseGuestbook {
     async handleSubmit(e) {
         e.preventDefault();
 
+        // Honeypot check (anti-spam)
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value !== '') {
+            console.log('Spam detected via honeypot');
+            this.showNotification('Erreur lors de la soumission', 'error');
+            return;
+        }
+
+        // RGPD consent check
+        const rgpdConsent = document.getElementById('rgpdConsent');
+        if (!rgpdConsent || !rgpdConsent.checked) {
+            this.showNotification('Veuillez accepter les conditions RGPD / Vui lòng chấp nhận điều khoản RGPD', 'error');
+            return;
+        }
+
         const name = document.getElementById('guestName').value.trim();
         const messageText = document.getElementById('guestMessage').value.trim();
         const emoji = document.querySelector('input[name="emoji"]:checked').value;
@@ -97,13 +114,29 @@ class FirebaseGuestbook {
             return;
         }
 
+        // Basic spam detection
+        if (messageText.length < 10) {
+            this.showNotification('Le message doit contenir au moins 10 caractères / Tin nhắn phải có ít nhất 10 ký tự', 'error');
+            return;
+        }
+
+        // Check for spam patterns (too many links)
+        const linkCount = (messageText.match(/https?:\/\//g) || []).length;
+        if (linkCount > 2) {
+            this.showNotification('Trop de liens dans le message / Quá nhiều liên kết trong tin nhắn', 'error');
+            return;
+        }
+
         const message = {
             name: name,
             text: messageText,
             emoji: emoji,
             visibility: visibility,
             date: new Date().toISOString(),
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            moderated: false, // En attente de modération
+            approved: false,  // Pas encore approuvé
+            userAgent: navigator.userAgent.substring(0, 100) // Pour détecter les bots
         };
 
         try {

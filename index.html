@@ -20,20 +20,16 @@
         <!-- <source src="music/wedding-song.mp3" type="audio/mpeg"> -->
     </audio>
 
-    <!-- Floating Hearts Background -->
-    <div class="hearts-container" id="heartsContainer"></div>
+    <!-- Decorative elements -->
+    <div class="hearts-container" id="heartsContainer" aria-hidden="true"></div>
+    <div class="golden-particles" id="goldenParticles" aria-hidden="true"></div>
+    <div class="scroll-progress-bar" id="scrollProgress" role="progressbar" aria-label="Progression du défilement"></div>
 
-    <!-- Golden Particles -->
-    <div class="golden-particles" id="goldenParticles"></div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress-bar" id="scrollProgress"></div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+    <!-- Navigation aids -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">↑</button>
 
     <!-- Guestbook Banner (Floating) -->
-    <div class="guestbook-banner" id="guestbookBanner">
+    <aside class="guestbook-banner" id="guestbookBanner" role="complementary" aria-label="Invitation à signer le livre d'or">
         <div class="banner-content">
             <span class="banner-icon">📖</span>
             <div class="banner-text">
@@ -45,11 +41,13 @@
                 <span class="vietnamese">Ký tên</span>
             </button>
         </div>
-        <button class="banner-close" id="closeBanner" aria-label="Fermer">×</button>
-    </div>
+        <button class="banner-close" id="closeBanner" aria-label="Fermer la bannière">×</button>
+    </aside>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header class="hero">
         <div class="hero-content reveal">
             <h1 class="hero-title">
                 <span class="french">Nous nous sommes mariés</span>
@@ -64,9 +62,12 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="photos/pro05.jpg" alt="Photo de mariage - Couple heureux" class="parallax-img">
+            <picture>
+                <source srcset="photos/pro05.webp" type="image/webp">
+                <img src="photos/pro05.jpg" alt="Phuong et Maxime lors de leur séance photo de mariage, souriant ensemble dans un cadre romantique" class="parallax-img" fetchpriority="high">
+            </picture>
         </div>
-    </section>
+    </header>
 
     <!-- Timeline Vertical Line -->
     <div class="timeline-line"></div>
@@ -76,7 +77,7 @@
         <div class="timeline-badge">01</div>
         <div class="timeline-content reveal">
             <div class="timeline-image">
-                <img src="photos/candid01.jpg" alt="Photo de mariage - La Rencontre">
+                <img src="photos/candid01.jpg" alt="Première rencontre de Phuong et Maxime - moment spontané et authentique capturant le début de leur histoire">
             </div>
             <div class="timeline-text">
                 <h2 class="french">La Rencontre</h2>
@@ -98,7 +99,7 @@
                 <p class="vietnamese">Một lời hứa long trọng, một hợp đồng tình yêu cho cuộc đời.</p>
             </div>
             <div class="timeline-image">
-                <img src="photos/pro06.jpg" alt="Photo de mariage - L'Engagement">
+                <img src="photos/pro06.jpg" alt="Phuong et Maxime lors de leurs fiançailles - moment émouvant de leur engagement mutuel">
             </div>
         </div>
     </section>
@@ -108,7 +109,7 @@
         <div class="timeline-badge">03</div>
         <div class="timeline-content reveal">
             <div class="timeline-image">
-                <img src="photos/pro10.jpg" alt="Photo de mariage - Notre Mariage">
+                <img src="photos/pro10.jpg" alt="Cérémonie de mariage officielle de Phuong et Maxime - célébration de leur union légale">
             </div>
             <div class="timeline-text">
                 <h2 class="french">Notre Mariage</h2>
@@ -130,7 +131,7 @@
                 <p class="vietnamese">Tay trong tay, mãi mãi và bên nhau.</p>
             </div>
             <div class="timeline-image">
-                <img src="photos/candid02.jpg" alt="Photo de mariage - Notre Avenir">
+                <img src="photos/candid02.jpg" alt="Phuong et Maxime regardant vers l'avenir - symbole de leur vie commune à venir">
             </div>
         </div>
     </section>
@@ -163,52 +164,52 @@
         <!-- Grid View -->
         <div class="gallery-grid" id="galleryGrid">
             <div class="gallery-item reveal" data-delay="100">
-                <img src="photos/pro02.jpg" alt="Photo de mariage - Galerie 1">
+                <img src="photos/pro02.jpg" alt="Photo professionnelle du mariage - couple en tenue de cérémonie">
             </div>
             <div class="gallery-item reveal" data-delay="150">
-                <img src="photos/candid03.jpg" alt="Photo de mariage - Galerie 2">
+                <img src="photos/candid03.jpg" alt="Moment candide capturé lors du mariage de Phuong et Maxime">
             </div>
             <div class="gallery-item reveal" data-delay="200">
-                <img src="photos/pro07.jpg" alt="Photo de mariage - Galerie 3">
+                <img src="photos/pro07.jpg" alt="Portrait professionnel des mariés - séance photo officielle">
             </div>
             <div class="gallery-item reveal" data-delay="250">
-                <img src="photos/candid04.jpg" alt="Photo de mariage - Galerie 4">
+                <img src="photos/candid04.jpg" alt="Photo authentique du couple lors de leur journée spéciale">
             </div>
             <div class="gallery-item reveal" data-delay="300">
-                <img src="photos/pro08.jpg" alt="Photo de mariage - Galerie 5">
+                <img src="photos/pro08.jpg" alt="Phuong et Maxime en tenue de mariage - photo professionnelle">
             </div>
             <div class="gallery-item reveal" data-delay="350">
-                <img src="photos/candid05.jpg" alt="Photo de mariage - Galerie 6">
+                <img src="photos/candid05.jpg" alt="Moment spontané du couple lors de leur célébration">
             </div>
             <div class="gallery-item reveal" data-delay="400">
-                <img src="photos/pro09.jpg" alt="Photo de mariage - Galerie 7">
+                <img src="photos/pro09.jpg" alt="Portrait élégant des mariés - shooting photo professionnel">
             </div>
             <div class="gallery-item reveal" data-delay="450">
-                <img src="photos/pro11.jpg" alt="Photo de mariage - Galerie 8">
+                <img src="photos/pro11.jpg" alt="Photo professionnelle du couple - séance de mariage">
             </div>
             <div class="gallery-item reveal" data-delay="500">
-                <img src="photos/pro12.jpg" alt="Photo de mariage - Galerie 9">
+                <img src="photos/pro12.jpg" alt="Phuong et Maxime posant ensemble - photo de mariage officielle">
             </div>
             <div class="gallery-item reveal" data-delay="650">
-                <img src="photos/candid08.jpg" alt="Photo de mariage - Galerie 12">
+                <img src="photos/candid08.jpg" alt="Instant capturé lors du mariage - moment authentique et émouvant">
             </div>
             <div class="gallery-item reveal" data-delay="700">
-                <img src="photos/pro13.jpg" alt="Photo de mariage - Galerie 13">
+                <img src="photos/pro13.jpg" alt="Portrait professionnel des mariés dans leur plus belle tenue">
             </div>
             <div class="gallery-item reveal" data-delay="750">
-                <img src="photos/candid09.jpg" alt="Photo de mariage - Galerie 14">
+                <img src="photos/candid09.jpg" alt="Photo candide du couple - moment naturel de leur journée de mariage">
             </div>
             <div class="gallery-item reveal" data-delay="800">
-                <img src="photos/pro14.jpg" alt="Photo de mariage - Galerie 15">
+                <img src="photos/pro14.jpg" alt="Phuong et Maxime lors de leur shooting photo de mariage">
             </div>
             <div class="gallery-item reveal" data-delay="850">
-                <img src="photos/pro15.jpg" alt="Photo de mariage - Galerie 16">
+                <img src="photos/pro15.jpg" alt="Photo professionnelle élégante du couple marié">
             </div>
             <div class="gallery-item reveal" data-delay="900">
-                <img src="photos/pro03.jpg" alt="Photo de mariage - Galerie 17">
+                <img src="photos/pro03.jpg" alt="Portrait artistique de Phuong et Maxime - séance photo de mariage">
             </div>
             <div class="gallery-item reveal" data-delay="950">
-                <img src="photos/pro04.jpg" alt="Photo de mariage - Galerie 18">
+                <img src="photos/pro04.jpg" alt="Dernier portrait professionnel du couple lors de leur mariage">
             </div>
         </div>
     </section>
@@ -302,6 +303,21 @@
                     </div>
                 </div>
 
+                <!-- Honeypot anti-spam (hidden field) -->
+                <div class="honeypot" style="position: absolute; left: -9999px;" aria-hidden="true">
+                    <label for="website">Site web (ne pas remplir)</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- RGPD Consent -->
+                <div class="form-group rgpd-consent">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rgpdConsent" name="rgpdConsent" required>
+                        <span class="french">J'accepte que mes données soient stockées pour afficher mon message sur ce site. <a href="#" onclick="alert('Vos données (nom et message) sont stockées dans Firebase Firestore. Elles sont visibles selon le mode de visibilité choisi. Pour supprimer vos données, contactez les propriétaires du site.'); return false;">En savoir plus</a></span>
+                        <span class="vietnamese">Tôi chấp nhận dữ liệu của mình được lưu trữ để hiển thị tin nhắn trên trang này. <a href="#" onclick="alert('Dữ liệu của bạn (tên và tin nhắn) được lưu trữ trong Firebase Firestore. Chúng hiển thị theo chế độ hiển thị bạn chọn. Để xóa dữ liệu, vui lòng liên hệ chủ sở hữu trang.'); return false;">Tìm hiểu thêm</a></span>
+                    </label>
+                </div>
+
                 <button type="submit" class="guestbook-submit">
                     <span class="french">Signer le livre d'or</span>
                     <span class="vietnamese">Ký tên</span>
@@ -350,11 +366,19 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse d'image agrandie">
+        <button class="lightbox-close" aria-label="Fermer la lightbox">&times;</button>
+        <img class="lightbox-content" id="lightbox-img" alt="">
     </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 Phuong & Maxime - Site de mariage</p>
+        <p><small>Créé avec amour pour célébrer notre union</small></p>
+    </footer>
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
