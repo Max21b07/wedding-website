@@ -32,6 +32,22 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
 
+    <!-- Guestbook Banner (Floating) -->
+    <div class="guestbook-banner" id="guestbookBanner">
+        <div class="banner-content">
+            <span class="banner-icon">📖</span>
+            <div class="banner-text">
+                <span class="banner-title french">Signez notre livre d'or</span>
+                <span class="banner-title vietnamese">Ký tên vào sổ lưu bút</span>
+            </div>
+            <button class="banner-btn" onclick="document.getElementById('guestbook').scrollIntoView({behavior: 'smooth'})">
+                <span class="french">Signer</span>
+                <span class="vietnamese">Ký tên</span>
+            </button>
+        </div>
+        <button class="banner-close" id="closeBanner" aria-label="Fermer">×</button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content reveal">
@@ -124,8 +140,28 @@
         <div class="gallery-header reveal">
             <h2 class="french">Notre Album</h2>
             <h2 class="vietnamese">Album Của Chúng Tôi</h2>
+            <div class="gallery-toggle">
+                <button class="toggle-btn active" data-view="grid">
+                    <span>📱 Grille</span>
+                </button>
+                <button class="toggle-btn" data-view="carousel">
+                    <span>🎠 Carrousel</span>
+                </button>
+            </div>
         </div>
-        <div class="gallery-grid">
+
+        <!-- Carousel View -->
+        <div class="carousel-container" id="carouselContainer" style="display: none;">
+            <button class="carousel-btn carousel-prev" id="carouselPrev">‹</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack"></div>
+            </div>
+            <button class="carousel-btn carousel-next" id="carouselNext">›</button>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="gallery-grid" id="galleryGrid">
             <div class="gallery-item reveal" data-delay="100">
                 <img src="photos/pro02.jpg" alt="Photo de mariage - Galerie 1">
             </div>
@@ -327,5 +363,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>

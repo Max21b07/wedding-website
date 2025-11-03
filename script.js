@@ -743,3 +743,47 @@ console.log('💕 Site de mariage chargé avec amour! 💕');
 console.log('💗 Wedding website loaded with love! 💗');
 console.log('✨ Premium UI activated! ✨');
 console.log('📖 Guestbook ready! ✨');
+
+// ==========================================
+// Guestbook Banner Control
+// ==========================================
+(function() {
+    const banner = document.getElementById('guestbookBanner');
+    const closeBanner = document.getElementById('closeBanner');
+    const guestbookSection = document.getElementById('guestbook');
+    
+    let bannerDismissed = sessionStorage.getItem('bannerDismissed') === 'true';
+    
+    // Show banner after 3 seconds if not dismissed
+    if (!bannerDismissed) {
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 3000);
+    }
+    
+    // Close banner
+    closeBanner.addEventListener('click', () => {
+        banner.classList.remove('show');
+        sessionStorage.setItem('bannerDismissed', 'true');
+    });
+    
+    // Hide banner when user scrolls to guestbook section
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                banner.classList.remove('show');
+            } else if (!bannerDismissed) {
+                // Show again when scrolling away from guestbook
+                const scrollPosition = window.scrollY;
+                const guestbookPosition = guestbookSection.offsetTop;
+                if (scrollPosition < guestbookPosition - 200) {
+                    banner.classList.add('show');
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    if (guestbookSection) {
+        observer.observe(guestbookSection);
+    }
+})();
