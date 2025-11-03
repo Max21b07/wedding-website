@@ -673,11 +673,11 @@ guestbookStyle.textContent = `
 `;
 document.head.appendChild(guestbookStyle);
 
-// Initialize Guestbook
-let guestbook;
-window.addEventListener('load', () => {
-    guestbook = new Guestbook();
-});
+// Initialize Guestbook - DISABLED (using Firebase version now)
+// let guestbook;
+// window.addEventListener('load', () => {
+//     guestbook = new Guestbook();
+// });
 
 // Add some demo messages if empty (optional - remove in production)
 window.addEventListener('load', () => {

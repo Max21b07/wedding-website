@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Livre d'Or</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 40px 20px;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .admin-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #d4516f;
+            margin-bottom: 10px;
+        }
+
+        .admin-stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 245, 0.9));
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .admin-messages {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-message {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-left: 5px solid;
+        }
+
+        .admin-message.public {
+            border-left-color: #2ecc71;
+        }
+
+        .admin-message.anonymous {
+            border-left-color: #f39c12;
+        }
+
+        .admin-message.private {
+            border-left-color: #e74c3c;
+        }
+
+        .admin-message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .admin-message-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #d4516f;
+        }
+
+        .admin-message-visibility {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .admin-message-text {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .admin-message-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: white;
+            border-color: #d4af37;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4516f, #e89bb5);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 81, 111, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <a href="index.html" class="back-btn">← Retour au site</a>
+
+        <div class="admin-header">
+            <h1>📖 Administration - Livre d'Or</h1>
+            <p>Tous les messages (y compris privés)</p>
+        </div>
+
+        <div class="admin-stats" id="adminStats">
+            <div class="stat-card">
+                <h3 id="totalCount">0</h3>
+                <p>Total messages</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="publicCount">0</h3>
+                <p>Messages publics</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="anonymousCount">0</h3>
+                <p>Messages anonymes</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="privateCount">0</h3>
+                <p>Messages privés</p>
+            </div>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="public">👁️ Public</button>
+            <button class="filter-btn" data-filter="anonymous">🎭 Anonyme</button>
+            <button class="filter-btn" data-filter="private">🔒 Privé</button>
+        </div>
+
+        <div class="admin-messages" id="adminMessages">
+            <!-- Messages will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <script>
+        class AdminPanel {
+            constructor() {
+                this.db = window.db;
+                this.currentFilter = 'all';
+                this.messages = [];
+                this.init();
+            }
+
+            init() {
+                if (!this.db) {
+                    alert('Firebase non initialisé. Veuillez configurer Firebase d\'abord.');
+                    return;
+                }
+
+                this.loadMessages();
+                this.attachFilterEvents();
+            }
+
+            loadMessages() {
+                this.db.collection('guestbook')
+                    .orderBy('timestamp', 'desc')
+                    .onSnapshot((snapshot) => {
+                        this.messages = [];
+                        snapshot.forEach((doc) => {
+                            this.messages.push({ id: doc.id, ...doc.data() });
+                        });
+                        this.updateStats();
+                        this.displayMessages();
+                    });
+            }
+
+            updateStats() {
+                const total = this.messages.length;
+                const publicCount = this.messages.filter(m => m.visibility === 'public').length;
+                const anonymousCount = this.messages.filter(m => m.visibility === 'anonymous').length;
+                const privateCount = this.messages.filter(m => m.visibility === 'private').length;
+
+                document.getElementById('totalCount').textContent = total;
+                document.getElementById('publicCount').textContent = publicCount;
+                document.getElementById('anonymousCount').textContent = anonymousCount;
+                document.getElementById('privateCount').textContent = privateCount;
+            }
+
+            displayMessages() {
+                const container = document.getElementById('adminMessages');
+                const filtered = this.currentFilter === 'all'
+                    ? this.messages
+                    : this.messages.filter(m => m.visibility === this.currentFilter);
+
+                if (filtered.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: #999;">Aucun message</p>';
+                    return;
+                }
+
+                container.innerHTML = filtered.map(msg => `
+                    <div class="admin-message ${msg.visibility}">
+                        <div class="admin-message-header">
+                            <div class="admin-message-name">${msg.emoji} ${this.escapeHtml(msg.name)}</div>
+                            <span class="admin-message-visibility" style="background: ${this.getVisibilityColor(msg.visibility)}; color: white;">
+                                ${this.getVisibilityLabel(msg.visibility)}
+                            </span>
+                        </div>
+                        <div class="admin-message-text">${this.escapeHtml(msg.text)}</div>
+                        <div class="admin-message-footer">
+                            <span>${this.formatDate(msg.date)}</span>
+                            <button class="delete-btn" onclick="adminPanel.deleteMessage('${msg.id}')">
+                                Supprimer
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            attachFilterEvents() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.currentFilter = btn.dataset.filter;
+                        this.displayMessages();
+                    });
+                });
+            }
+
+            async deleteMessage(id) {
+                if (!confirm('Êtes-vous sûr de vouloir supprimer ce message ?')) {
+                    return;
+                }
+
+                try {
+                    await this.db.collection('guestbook').doc(id).delete();
+                    alert('Message supprimé avec succès');
+                } catch (error) {
+                    console.error('Error deleting message:', error);
+                    alert('Erreur lors de la suppression');
+                }
+            }
+
+            getVisibilityColor(visibility) {
+                const colors = {
+                    public: '#2ecc71',
+                    anonymous: '#f39c12',
+                    private: '#e74c3c'
+                };
+                return colors[visibility] || '#999';
+            }
+
+            getVisibilityLabel(visibility) {
+                const labels = {
+                    public: '👁️ Public',
+                    anonymous: '🎭 Anonyme',
+                    private: '🔒 Privé'
+                };
+                return labels[visibility] || visibility;
+            }
+
+            formatDate(dateString) {
+                if (!dateString) return '';
+                const date = new Date(dateString);
+                return date.toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        }
+
+        // Initialize admin panel
+        let adminPanel;
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (window.db) {
+                    adminPanel = new AdminPanel();
+                } else {
+                    alert('Firebase non configuré. Veuillez configurer Firebase d\'abord.');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
