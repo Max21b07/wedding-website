@@ -751,11 +751,14 @@ console.log('📖 Guestbook ready! ✨');
     const banner = document.getElementById('guestbookBanner');
     const closeBanner = document.getElementById('closeBanner');
     const guestbookSection = document.getElementById('guestbook');
-    
+
     let bannerDismissed = sessionStorage.getItem('bannerDismissed') === 'true';
-    
-    // Show banner after 3 seconds if not dismissed
-    if (!bannerDismissed) {
+
+    // Show banner after delay (disabled on mobile to prevent scroll issues)
+    // Check if it's not a mobile device based on screen width
+    const isMobile = window.innerWidth <= 768;
+
+    if (!bannerDismissed && !isMobile) {
         setTimeout(() => {
             banner.classList.add('show');
         }, 3000);

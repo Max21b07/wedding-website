@@ -1373,6 +1373,7 @@ body {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
+        left: 30px; /* Align with timeline-line on mobile */
     }
 
     .timeline-line {

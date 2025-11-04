@@ -110,6 +110,7 @@
         width: 60px !important;
         height: 60px !important;
         font-size: 1.5rem !important;
+        left: 30px !important; /* Align with timeline-line on mobile */
     }
 
     /* Gallery optimisée mobile */
@@ -317,6 +318,7 @@
         width: 50px !important;
         height: 50px !important;
         font-size: 1.2rem !important;
+        left: 25px !important; /* Align with timeline-line on small mobile */
     }
 
     .guestbook-banner {
