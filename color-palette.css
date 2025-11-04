@@ -1,0 +1,134 @@
+/* ================================================
+   PALETTE DE COULEURS COHÉRENTE
+   Wedding Website - Phuong & Maxime
+   ================================================ */
+
+/*
+🎨 Palette harmonieuse inspirée de :
+- Rose poudré romantique
+- Doré doux élégant
+- Vert sauge naturel
+- Tons neutres chaleureux
+*/
+
+:root {
+    /* === COULEURS PRINCIPALES === */
+
+    /* Fond et base */
+    --color-bg-main: #FAF8F5;              /* Blanc cassé chaud */
+    --color-bg-light: #FFFFFF;              /* Blanc pur */
+    --color-bg-subtle: #F5F3F0;            /* Gris très clair chaud */
+
+    /* Rose poudré (accent doux) */
+    --color-rose-powder: #E8B4BC;          /* Rose poudré principal */
+    --color-rose-light: #F4D5DA;           /* Rose très clair */
+    --color-rose-medium: #D89BA5;          /* Rose moyen */
+
+    /* Rose vif (CTA et accent fort) */
+    --color-accent-primary: #C7365F;       /* Rose vif pour boutons */
+    --color-accent-hover: #A52E4F;         /* Rose vif hover */
+    --color-accent-light: rgba(199, 54, 95, 0.1); /* Rose vif transparent */
+
+    /* Doré doux */
+    --color-gold-soft: #D4AF7A;            /* Doré principal */
+    --color-gold-light: #E8CCAA;           /* Doré clair */
+    --color-gold-accent: #B8935E;          /* Doré foncé */
+
+    /* Vert sauge (fraîcheur) */
+    --color-sage: #A8B5A0;                 /* Vert sauge principal */
+    --color-sage-light: #C5D0BF;           /* Vert sauge clair */
+    --color-sage-dark: #8A9B82;            /* Vert sauge foncé */
+
+    /* Textes */
+    --color-text-primary: #4A4A4A;         /* Gris foncé chaud */
+    --color-text-secondary: #7A7A7A;       /* Gris moyen */
+    --color-text-light: #A0A0A0;           /* Gris clair */
+
+    /* Ombres */
+    --shadow-sm: 0 2px 8px rgba(74, 74, 74, 0.08);
+    --shadow-md: 0 4px 16px rgba(74, 74, 74, 0.12);
+    --shadow-lg: 0 8px 32px rgba(74, 74, 74, 0.16);
+    --shadow-xl: 0 16px 48px rgba(74, 74, 74, 0.20);
+
+    /* Overlays */
+    --overlay-light: rgba(250, 248, 245, 0.95);
+    --overlay-dark: rgba(74, 74, 74, 0.7);
+
+    /* === GRADIENTS === */
+
+    /* Fond général */
+    --gradient-bg: linear-gradient(135deg,
+        var(--color-bg-main) 0%,
+        var(--color-rose-light) 30%,
+        var(--color-sage-light) 70%,
+        var(--color-bg-subtle) 100%
+    );
+
+    /* Rose romantique */
+    --gradient-rose: linear-gradient(135deg,
+        var(--color-rose-powder) 0%,
+        var(--color-rose-medium) 100%
+    );
+
+    /* Doré élégant */
+    --gradient-gold: linear-gradient(135deg,
+        var(--color-gold-light) 0%,
+        var(--color-gold-soft) 100%
+    );
+
+    /* Accent CTA */
+    --gradient-cta: linear-gradient(135deg,
+        var(--color-accent-primary) 0%,
+        var(--color-accent-hover) 100%
+    );
+
+    /* Timeline */
+    --gradient-timeline: linear-gradient(180deg,
+        transparent 0%,
+        var(--color-gold-soft) 10%,
+        var(--color-rose-powder) 50%,
+        var(--color-sage) 90%,
+        transparent 100%
+    );
+
+    /* === ESPACEMENTS === */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+    --spacing-2xl: 4rem;    /* 64px */
+    --spacing-3xl: 6rem;    /* 96px */
+
+    /* === TYPOGRAPHIE === */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Noto Sans', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+
+    /* === BORDER RADIUS === */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+}
+
+/* === CLASSES UTILITAIRES === */
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-light { color: var(--color-text-light); }
+
+.bg-main { background-color: var(--color-bg-main); }
+.bg-light { background-color: var(--color-bg-light); }
+.bg-subtle { background-color: var(--color-bg-subtle); }
+
+.accent-rose { color: var(--color-rose-powder); }
+.accent-gold { color: var(--color-gold-soft); }
+.accent-sage { color: var(--color-sage); }
+.accent-primary { color: var(--color-accent-primary); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }

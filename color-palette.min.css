@@ -1,0 +1,21 @@
+:root{--color-bg-main:#FAF8F5;--color-bg-light:#FFFFFF;--color-bg-subtle:#F5F3F0;--color-rose-powder:#E8B4BC;--color-rose-light:#F4D5DA;--color-rose-medium:#D89BA5;--color-accent-primary:#C7365F;--color-accent-hover:#A52E4F;--color-accent-light:rgba(199, 54, 95, 0.1);--color-gold-soft:#D4AF7A;--color-gold-light:#E8CCAA;--color-gold-accent:#B8935E;--color-sage:#A8B5A0;--color-sage-light:#C5D0BF;--color-sage-dark:#8A9B82;--color-text-primary:#4A4A4A;--color-text-secondary:#7A7A7A;--color-text-light:#A0A0A0;--shadow-sm:0 2px 8px rgba(74, 74, 74, 0.08);--shadow-md:0 4px 16px rgba(74, 74, 74, 0.12);--shadow-lg:0 8px 32px rgba(74, 74, 74, 0.16);--shadow-xl:0 16px 48px rgba(74, 74, 74, 0.20);--overlay-light:rgba(250, 248, 245, 0.95);--overlay-dark:rgba(74, 74, 74, 0.7);--gradient-bg:linear-gradient(135deg,
+        var(--color-bg-main) 0%,
+        var(--color-rose-light) 30%,
+        var(--color-sage-light) 70%,
+        var(--color-bg-subtle) 100%
+    );--gradient-rose:linear-gradient(135deg,
+        var(--color-rose-powder) 0%,
+        var(--color-rose-medium) 100%
+    );--gradient-gold:linear-gradient(135deg,
+        var(--color-gold-light) 0%,
+        var(--color-gold-soft) 100%
+    );--gradient-cta:linear-gradient(135deg,
+        var(--color-accent-primary) 0%,
+        var(--color-accent-hover) 100%
+    );--gradient-timeline:linear-gradient(180deg,
+        transparent 0%,
+        var(--color-gold-soft) 10%,
+        var(--color-rose-powder) 50%,
+        var(--color-sage) 90%,
+        transparent 100%
+    );--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:1.5rem;--spacing-lg:2rem;--spacing-xl:3rem;--spacing-2xl:4rem;--spacing-3xl:6rem;--font-heading:'Playfair Display',serif;--font-body:'Noto Sans',sans-serif;--font-accent:'Cormorant Garamond',serif;--radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;--radius-full:9999px}.text-primary{color:var(--color-text-primary)}.text-secondary{color:var(--color-text-secondary)}.text-light{color:var(--color-text-light)}.bg-main{background-color:var(--color-bg-main)}.bg-light{background-color:var(--color-bg-light)}.bg-subtle{background-color:var(--color-bg-subtle)}.accent-rose{color:var(--color-rose-powder)}.accent-gold{color:var(--color-gold-soft)}.accent-sage{color:var(--color-sage)}.accent-primary{color:var(--color-accent-primary)}.shadow-sm{box-shadow:var(--shadow-sm)}.shadow-md{box-shadow:var(--shadow-md)}.shadow-lg{box-shadow:var(--shadow-lg)}.shadow-xl{box-shadow:var(--shadow-xl)}
