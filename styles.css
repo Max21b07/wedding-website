@@ -219,12 +219,16 @@ a:hover {
     text-shadow: 0 2px 8px rgba(74, 74, 74, 0.15);
     letter-spacing: normal;
     white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
 .hero-title .french {
     display: block;
     margin-bottom: var(--spacing-sm);
     white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
 .hero-title .vietnamese {
@@ -232,6 +236,8 @@ a:hover {
     font-size: 2.5rem;
     color: var(--color-rose-medium);
     white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
 .hero-subtitle {
