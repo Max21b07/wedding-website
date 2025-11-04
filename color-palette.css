@@ -101,9 +101,21 @@
     --spacing-3xl: 6rem;    /* 96px */
 
     /* === TYPOGRAPHIE === */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Noto Sans', sans-serif;
-    --font-accent: 'Cormorant Garamond', serif;
+    /* Limit to 2 fonts maximum for consistency */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Typography scale */
+    --font-size-h1: 3.5rem;      /* 56px - Hero titles */
+    --font-size-h2: 3rem;        /* 48px - Section titles */
+    --font-size-h3: 2rem;        /* 32px - Subsection titles */
+    --font-size-body: 1.125rem;  /* 18px - Body text */
+    --font-size-small: 1rem;     /* 16px - Small text */
+
+    /* Line heights - generous for readability */
+    --line-height-heading: 1.3;  /* Tight for headings */
+    --line-height-body: 1.8;     /* Generous for body text */
+    --line-height-relaxed: 2;    /* Very relaxed */
 
     /* === BORDER RADIUS === */
     --radius-sm: 8px;

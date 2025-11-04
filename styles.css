@@ -17,7 +17,11 @@ body {
     background: var(--gradient-bg);
     color: var(--color-text-primary);
     overflow-x: hidden;
-    line-height: 1.7;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Audio Controls */
@@ -160,11 +164,13 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: var(--font-size-h1);
     font-weight: 700;
+    line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-lg);
     color: var(--color-rose-powder);
     text-shadow: 0 2px 8px rgba(74, 74, 74, 0.15);
+    letter-spacing: -0.02em;
 }
 
 .hero-title .french {
@@ -179,8 +185,10 @@ body {
 }
 
 .hero-subtitle {
-    font-family: var(--font-accent);
-    font-size: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: var(--line-height-relaxed);
     margin-bottom: var(--spacing-xl);
     color: var(--color-text-secondary);
 }
@@ -263,8 +271,11 @@ body {
 
 .timeline-text h2 {
     font-family: var(--font-heading);
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-h2);
+    font-weight: 600;
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.01em;
 }
 
 .timeline-text h2.french {
@@ -273,19 +284,21 @@ body {
 
 .timeline-text h2.vietnamese {
     color: var(--color-rose-medium);
-    font-size: 2.2rem;
+    font-size: var(--font-size-h3);
     margin-bottom: var(--spacing-xl);
 }
 
 .timeline-text p {
-    font-size: 1.2rem;
-    line-height: 1.9;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    font-weight: 400;
+    line-height: var(--line-height-body);
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
 }
 
 .timeline-text p.french {
-    font-family: var(--font-accent);
+    font-family: var(--font-body);
 }
 
 /* Gallery Section */
@@ -305,8 +318,11 @@ body {
 
 .gallery-header h2 {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
 }
 
 .gallery-header h2.french {
@@ -315,7 +331,7 @@ body {
 
 .gallery-header h2.vietnamese {
     color: var(--color-rose-medium);
-    font-size: 2.5rem;
+    font-size: var(--font-size-h2);
 }
 
 .gallery-grid {
@@ -379,8 +395,11 @@ body {
 .final-content h2 {
     font-family: var(--font-heading);
     font-size: 4rem;
+    font-weight: 700;
+    line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-lg);
     text-shadow: var(--shadow-md);
+    letter-spacing: -0.02em;
 }
 
 .hearts-animation {
@@ -894,15 +913,20 @@ body {
 
 .guestbook-header h2 {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
 }
 
 .guestbook-subtitle {
-    font-size: 1.3rem;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: var(--line-height-relaxed);
     color: var(--color-text-secondary);
-    margin: var(--spacing-xs) 0;
-    font-family: var(--font-accent);
+    margin: var(--spacing-sm) 0 var(--spacing-lg);
 }
 
 /* Guestbook Form */
