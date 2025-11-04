@@ -148,7 +148,7 @@ body {
     text-align: center;
     z-index: 10;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
@@ -160,6 +160,7 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     color: #d4516f;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hero-title .french {
@@ -1342,6 +1343,8 @@ body {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
+        word-spacing: 0.15em; /* Add space between words on mobile */
+        line-height: 1.3; /* Improve line spacing */
     }
 
     .hero-title .vietnamese {
@@ -1373,7 +1376,19 @@ body {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
-        left: 30px; /* Align with timeline-line on mobile */
+        left: 30px !important; /* Align with timeline-line on mobile */
+        top: 60px !important; /* Fixed position from top on mobile */
+        transform: translate(0, 0) !important; /* Remove centering on mobile */
+        animation: badge-pulse-mobile 2s infinite !important;
+    }
+
+    @keyframes badge-pulse-mobile {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(0, 0) scale(1.1);
+        }
     }
 
     .timeline-line {
@@ -1399,6 +1414,11 @@ body {
     .emoji-selector {
         justify-content: center;
     }
+}
+
+/* Hide private messages toggle button (admin only feature) */
+#showPrivateToggle {
+    display: none;
 }
 
 /* Guestbook Banner (Floating) */
@@ -1519,20 +1539,31 @@ body {
     .guestbook-banner {
         padding: 12px 20px;
         border-radius: 40px;
+        left: 10px;
+        right: 10px;
+        width: calc(100% - 20px);
+        max-width: none;
+        justify-content: center;
     }
-    
+
+    .banner-content {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
     .banner-icon {
         font-size: 1.5rem;
     }
-    
+
     .banner-title.french {
         font-size: 0.9rem;
     }
-    
+
     .banner-title.vietnamese {
         font-size: 0.75rem;
     }
-    
+
     .banner-btn {
         padding: 10px 20px;
     }
