@@ -17,11 +17,48 @@ body {
     background: var(--gradient-bg);
     color: var(--color-text-primary);
     overflow-x: hidden;
+    max-width: 100vw;
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all tap targets are at least 44x44px (Apple HIG) */
+button,
+input,
+textarea,
+select,
+a,
+label {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Exception for honeypot label (should be hidden anyway) */
+.honeypot label,
+label[for="website"] {
+    min-height: auto;
+}
+
+/* Exception for inline text links */
+p a,
+span a {
+    min-width: auto;
+    min-height: auto;
+    padding: 8px 12px;
+}
+
+/* Ensure good contrast for all links */
+a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
 }
 
 /* Audio Controls */
@@ -36,12 +73,17 @@ body {
     background: var(--overlay-light);
     border: 2px solid var(--color-accent-primary);
     border-radius: var(--radius-full);
+    min-width: 50px;
+    min-height: 50px;
     width: 50px;
     height: 50px;
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .audio-btn:hover {
@@ -63,6 +105,7 @@ body {
 .hearts-container {
     position: fixed;
     width: 100%;
+    max-width: 100vw;
     height: 100vh;
     pointer-events: none;
     z-index: 1;
@@ -160,6 +203,10 @@ body {
     border-radius: var(--radius-lg);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-xl);
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .hero-title {
@@ -171,6 +218,9 @@ body {
     color: var(--color-rose-powder);
     text-shadow: 0 2px 8px rgba(74, 74, 74, 0.15);
     letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-title .french {
@@ -191,6 +241,8 @@ body {
     line-height: var(--line-height-relaxed);
     margin-bottom: var(--spacing-xl);
     color: var(--color-text-secondary);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .hero-subtitle .french,
@@ -203,6 +255,7 @@ body {
     font-size: 2rem;
     animation: bounce 2s infinite;
     color: var(--color-accent-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes bounce {
@@ -390,6 +443,9 @@ body {
     text-align: center;
     color: var(--color-bg-light);
     z-index: 10;
+    max-width: 100vw;
+    padding: 0 var(--spacing-lg);
+    overflow: hidden;
 }
 
 .final-content h2 {
@@ -918,6 +974,7 @@ body {
     line-height: var(--line-height-heading);
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.02em;
+    color: var(--color-text-primary);
 }
 
 .guestbook-subtitle {
@@ -1237,11 +1294,12 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    border: 2px solid rgba(212, 175, 55, 0.2);
+    border: 2px solid rgba(212, 175, 55, 0.3);
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-text-primary);
 }
 
 .visibility-option:hover {
@@ -1494,6 +1552,7 @@ body {
 .banner-icon {
     font-size: 2rem;
     animation: bounce 2s infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes bounce {
